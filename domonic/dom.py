@@ -752,6 +752,10 @@ class Node(EventTarget):
         except Exception as e:
             print("_iterate error", e)
 
+    def __bool__(self):
+        # was previously falling back to __len__
+        return True
+
     def __len__(self):
         return len(self.args)
 
